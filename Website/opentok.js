@@ -1,12 +1,4 @@
-<html>
-<head>
-<title>Rocketutor</title>
-
-
-<script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js" ></script>	
-
-<script type="text/javascript">
-  var apiKey    = "44704232";
+var apiKey    = "44704232";
   var sessionId = "1_MX40NDcwNDIzMn5-U2F0IE1hciAyMiAxODoyNzowNSBQRFQgMjAxNH4wLjM1OTc0OTYyfg";
   var token     = "T1==cGFydG5lcl9pZD00NDcwNDIzMiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1kM2MyMDlhMTNiYjQ0NGRhYjJkZDljNGMyYzY5NDNjNGE0MjM3ODViOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDQwTkRjd05ESXpNbjUtVTJGMElFMWhjaUF5TWlBeE9Eb3lOem93TlNCUVJGUWdNakF4Tkg0d0xqTTFPVGMwT1RZeWZnJmNyZWF0ZV90aW1lPTEzOTU1MzgwNzYmbm9uY2U9MC4xNDAzNzcyODYwMDE5MDY0NiZleHBpcmVfdGltZT0xMzk1NjI0NDIxJmNvbm5lY3Rpb25fZGF0YT0=";
  
@@ -105,17 +97,3 @@ function exceptionHandler(event) {
         // Connection failed
     }
 }
-
-
-</script>
-
-</head>
-
-<body>
-<div id="place">
-hi
-</div>
-<DIV style="position: absolute; top:8px; left:415px; width:940px; height:500px; border:1px solid #000">For hima <3</DIV>
-</body>
-
-</html>
