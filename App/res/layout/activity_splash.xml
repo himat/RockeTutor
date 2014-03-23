@@ -17,6 +17,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="92dp"
+        android:max="5000"
         android:progress="0" />
 
 "

@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.widget.ProgressBar;
 
 public class SplashActivity extends Activity {
-	private final int progressMax = 5000;
+	
 	
 	private Handler mHandler = new Handler();
 	
@@ -22,12 +22,11 @@ public class SplashActivity extends Activity {
 		setContentView(R.layout.activity_splash);
 
 		mProgress = (ProgressBar) findViewById(R.id.splashProgressBar);
-		mProgress.setMax(progressMax);
 		
 		Thread timer = new Thread()	{
 			public void run() {
                 long now = System.currentTimeMillis();
-				while (System.currentTimeMillis() - now < progressMax) {
+				while (System.currentTimeMillis() - now < 5000) {
                     mProgressStatus = (int)(System.currentTimeMillis() - now); 
 
                     // Update the progress bar
