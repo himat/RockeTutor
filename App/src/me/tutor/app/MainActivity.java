@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent videoChatIntent = new Intent(getApplicationContext(), VideoChatActivity.class);
+				Intent videoChatIntent = new Intent(getApplicationContext(), OpenTokVideoRenderer.class);
 				startActivity(videoChatIntent);
 			}
 			

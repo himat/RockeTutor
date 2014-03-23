@@ -6,5 +6,6 @@
     <string name="welcome">Welcome to RockeTutor!</string>
     <string name="title_activity_video_chat">VideoChatActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="API_KEY">44704232</string>
 
 </resources>
