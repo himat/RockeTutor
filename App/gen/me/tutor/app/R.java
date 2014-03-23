@@ -24,41 +24,54 @@ public final class R {
         public static final int background=0x7f020000;
         public static final int ic_launcher=0x7f020001;
         public static final int main_logo_anim=0x7f020002;
-        public static final int rocketutor1=0x7f020003;
-        public static final int rocketutor2=0x7f020004;
-        public static final int splashscreen=0x7f020005;
+        public static final int rocketblast1=0x7f020003;
+        public static final int rocketblast10=0x7f020004;
+        public static final int rocketblast11=0x7f020005;
+        public static final int rocketblast2=0x7f020006;
+        public static final int rocketblast3=0x7f020007;
+        public static final int rocketblast4=0x7f020008;
+        public static final int rocketblast5=0x7f020009;
+        public static final int rocketblast6=0x7f02000a;
+        public static final int rocketblast7=0x7f02000b;
+        public static final int rocketblast8=0x7f02000c;
+        public static final int rocketblast9=0x7f02000d;
+        public static final int splashscreen=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000b;
+        public static final int action_settings=0x7f09000c;
+        public static final int collaborativeTextButton=0x7f090009;
         public static final int loginButton=0x7f090006;
         public static final int loginLayout=0x7f090000;
         public static final int logoImageView=0x7f090001;
         public static final int otherUserTextView=0x7f090008;
         public static final int passwordEditText=0x7f090005;
         public static final int passwordTextView=0x7f090004;
-        public static final int publisherview=0x7f09000a;
+        public static final int publisherview=0x7f09000b;
         public static final int splashProgressBar=0x7f090007;
-        public static final int subscriberview=0x7f090009;
+        public static final int subscriberview=0x7f09000a;
         public static final int usernameEditText=0x7f090003;
         public static final int usernameTextView=0x7f090002;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_splash=0x7f030001;
-        public static final int activity_users_list=0x7f030002;
-        public static final int activity_video_chat=0x7f030003;
-        public static final int user_list_item=0x7f030004;
+        public static final int activity_collab_text=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_splash=0x7f030002;
+        public static final int activity_users_list=0x7f030003;
+        public static final int activity_video_chat=0x7f030004;
+        public static final int user_list_item=0x7f030005;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
-        public static final int splash=0x7f080001;
-        public static final int users_list=0x7f080002;
-        public static final int video_chat=0x7f080003;
+        public static final int collab_text=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int splash=0x7f080002;
+        public static final int users_list=0x7f080003;
+        public static final int video_chat=0x7f080004;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060003;
+        public static final int title_activity_collab_text=0x7f060006;
         public static final int title_activity_splash=0x7f060005;
         public static final int title_activity_users_list=0x7f060004;
         public static final int title_activity_video_chat=0x7f060002;

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:drawable="@drawable/rocketutor1" android:duration="1" />
-    <item android:drawable="@drawable/rocketutor2" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast1" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast2" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast3" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast4" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast5" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast6" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast7" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast8" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast9" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast10" android:duration="1" />
+    <item android:drawable="@drawable/rocketblast11" android:duration="1000" />
 </animation-list>

@@ -6,6 +6,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -51,6 +54,18 @@ public class VideoChatActivity extends Activity implements Session.Listener,
         publisherViewContainer = (RelativeLayout) findViewById(R.id.publisherview);
         subscriberViewContainer = (RelativeLayout) findViewById(R.id.subscriberview);
         otherUserView = (TextView) findViewById(R.id.otherUserTextView);
+        
+        Button collabButton = (Button) findViewById(R.id.collaborativeTextButton);
+        collabButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(VideoChatActivity.this, CollabTextActivity.class);
+				startActivity(intent);
+			}
+        	
+        });
         
         Intent intent = getIntent();
         

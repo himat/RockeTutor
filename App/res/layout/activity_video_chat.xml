@@ -9,11 +9,26 @@
     android:background="@drawable/background"
 	android:orientation="vertical" >
     
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <TextView
         android:id="@+id/otherUserTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
+        
+        <Button
+            android:id="@+id/collaborativeTextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Collaborative Text Editor" />
+        
+    </LinearLayout>
+    
     
     <RelativeLayout
         android:id="@+id/subscriberview"
