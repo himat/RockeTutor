@@ -26,9 +26,9 @@ import com.opentok.android.SubscriberKit;
  */
 public class VideoChatActivity extends Activity implements Session.Listener,
         Publisher.Listener, Subscriber.Listener {
-
-    private static final String LOGTAG = "demo-hello-world";
     
+	private final String LOGTAG = "video-chat-activity";
+	
     private Session mSession;
     private Publisher mPublisher;
     private Subscriber mSubscriber;
@@ -39,6 +39,7 @@ public class VideoChatActivity extends Activity implements Session.Listener,
     
     private String SESSION_ID;
     private String TOKEN;
+    private String API_KEY;
     private Boolean SUBSCRIBE_TO_SELF = false;
 
     @Override
@@ -55,8 +56,11 @@ public class VideoChatActivity extends Activity implements Session.Listener,
         
         otherUserView.setText("You are now chatting with: " + intent.getStringExtra(UsersListActivity.userID));
         
-        SESSION_ID = "1_MX40NDcwNDIzMn5-U2F0IE1hciAyMiAxODoyNzowNSBQRFQgMjAxNH4wLjM1OTc0OTYyfg";
-        TOKEN = "T1==cGFydG5lcl9pZD00NDcwNDIzMiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1kM2MyMDlhMTNiYjQ0NGRhYjJkZDljNGMyYzY5NDNjNGE0MjM3ODViOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDQwTkRjd05ESXpNbjUtVTJGMElFMWhjaUF5TWlBeE9Eb3lOem93TlNCUVJGUWdNakF4Tkg0d0xqTTFPVGMwT1RZeWZnJmNyZWF0ZV90aW1lPTEzOTU1MzgwNzYmbm9uY2U9MC4xNDAzNzcyODYwMDE5MDY0NiZleHBpcmVfdGltZT0xMzk1NjI0NDIxJmNvbm5lY3Rpb25fZGF0YT0=";
+        API_KEY = intent.getStringExtra(UsersListActivity.apikey);
+        
+        SESSION_ID = intent.getStringExtra(UsersListActivity.sessionid);
+        
+        TOKEN = intent.getStringExtra(UsersListActivity.token);
 
         mStreams = new ArrayList<Stream>();
 
@@ -94,7 +98,7 @@ public class VideoChatActivity extends Activity implements Session.Listener,
     private void sessionConnect() {
         if (mSession == null) {
             mSession = new Session(VideoChatActivity.this, SESSION_ID, VideoChatActivity.this);
-            mSession.connect(getResources().getString(R.string.API_KEY), TOKEN);
+            mSession.connect(API_KEY, TOKEN);
         }
     }
 

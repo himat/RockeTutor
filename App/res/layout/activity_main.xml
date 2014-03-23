@@ -8,6 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context=".MainActivity" >
 
     <TextView
@@ -17,10 +18,9 @@
         android:text="Welcome to..."/>
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/logoImageView"
         android:layout_width="match_parent"
-        android:layout_height="285dp"
-        android:src="@drawable/logo" />
+        android:layout_height="285dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

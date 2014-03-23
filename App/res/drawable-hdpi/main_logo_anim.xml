@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@drawable/rocketutor1" android:duration="1" />
+    <item android:drawable="@drawable/rocketutor2" android:duration="1" />
+</animation-list>
