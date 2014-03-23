@@ -1,0 +1,20 @@
+
+.no-margin
+{
+	margin-right: -160px;
+	padding-right: 13px;
+}
+
+.tutor-panel{
+	
+	min-height: 500px;
+	background-color:white;
+	
+}
+.tutor-list{
+	color: green;
+	text-align: left;
+}
+.tutor-name{
+	color: #555;
+}
