@@ -1,24 +1,27 @@
 package me.tutor.app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
+import org.xmlpull.v1.XmlPullParser;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+import android.content.res.XmlResourceParser;
+import android.graphics.drawable.AnimationDrawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	private ArrayList<String> userList;
+	private ArrayList<String> userList = new ArrayList<String>();
 	private EditText usernameEditText;
-	private EditText passwordEditText; 
+	private EditText passwordEditText;
+	private AnimationDrawable logoDrawable;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +32,29 @@ public class MainActivity extends Activity {
 		Button loginButton = (Button) findViewById(R.id.loginButton);
 		usernameEditText = (EditText) findViewById(R.id.usernameEditText);
 		passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+		
+		ImageView logoIV = (ImageView) findViewById(R.id.logoImageView);
+		logoIV.setBackgroundResource(R.drawable.main_logo_anim);
+		logoDrawable = (AnimationDrawable) logoIV.getBackground();
+		logoDrawable.start();
 
-		userList = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.users_list)));
+		try {
+			XmlResourceParser userParse = getResources().getXml(R.xml.users);
+			int eventType = userParse.getEventType();
+			while (eventType != XmlPullParser.END_DOCUMENT)
+			{
+				if(eventType == XmlPullParser.START_TAG)
+				{
+					if (userParse.getName().equals("email") ) {
+						eventType = userParse.next();
+						userList.add(userParse.getText());
+					}
+				}
+				eventType = userParse.next();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		loginButton.setOnClickListener(new OnClickListener(){
 
