@@ -4,6 +4,14 @@
 <head>
   <title>Google Drive Realtime quickstart</title>
   <meta http-equiv="X-UA-Compatible" content="IE=9">
+  
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+    <link rel="stylesheet" href="codemirror-4.0/lib/codemirror.css" />
+    <script src="codemirror-4.0/lib/codemirror.js"></script>
+
+    <link rel="stylesheet" href="Firepad/firepad.css" />
+    <script src="Firepad/firepad.js"></script>
 
   <!-- Load the Realtime libraries. -->
   <script type="text/javascript"
@@ -32,6 +40,14 @@
   <!-- Undo and redo buttons. -->
   <button id="undoButton" disabled>Undo</button>
   <button id="redoButton" disabled>Redo</button>
+  
+  <div id="firepad"></div>
+    <script>
+      var firepadRef = new Firebase('https://burning-fire-3748.firebaseio.com/');
+      var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
+      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
+          { richTextShortcuts: true, richTextToolbar: true });
+    </script>
 
   <script>
     /**
