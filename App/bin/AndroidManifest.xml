@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="me.tutor.app.OpenTokVideoRenderer"
+            android:name="me.tutor.app.VideoChatActivity"
             android:label="@string/title_activity_video_chat" >
         </activity>
     </application>
