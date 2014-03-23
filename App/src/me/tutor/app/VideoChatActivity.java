@@ -3,6 +3,7 @@ package me.tutor.app;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.RelativeLayout;
@@ -38,7 +39,7 @@ public class VideoChatActivity extends Activity implements Session.Listener,
     
     private String SESSION_ID;
     private String TOKEN;
-    private Boolean SUBSCRIBE_TO_SELF = true;
+    private Boolean SUBSCRIBE_TO_SELF = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,9 @@ public class VideoChatActivity extends Activity implements Session.Listener,
         subscriberViewContainer = (RelativeLayout) findViewById(R.id.subscriberview);
         otherUserView = (TextView) findViewById(R.id.otherUserTextView);
         
-        otherUserView.setText("You are now chatting with: ");
+        Intent intent = getIntent();
+        
+        otherUserView.setText("You are now chatting with: " + intent.getStringExtra(UsersListActivity.userID));
         
         SESSION_ID = "1_MX40NDcwNDIzMn5-U2F0IE1hciAyMiAxODoyNzowNSBQRFQgMjAxNH4wLjM1OTc0OTYyfg";
         TOKEN = "T1==cGFydG5lcl9pZD00NDcwNDIzMiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1kM2MyMDlhMTNiYjQ0NGRhYjJkZDljNGMyYzY5NDNjNGE0MjM3ODViOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDQwTkRjd05ESXpNbjUtVTJGMElFMWhjaUF5TWlBeE9Eb3lOem93TlNCUVJGUWdNakF4Tkg0d0xqTTFPVGMwT1RZeWZnJmNyZWF0ZV90aW1lPTEzOTU1MzgwNzYmbm9uY2U9MC4xNDAzNzcyODYwMDE5MDY0NiZleHBpcmVfdGltZT0xMzk1NjI0NDIxJmNvbm5lY3Rpb25fZGF0YT0=";

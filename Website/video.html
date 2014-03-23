@@ -28,6 +28,112 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+	<script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js" ></script>	
+
+<script type="text/javascript">
+  var apiKey    = "44704232";
+  var sessionId = "1_MX40NDcwNDIzMn5-U2F0IE1hciAyMiAxODoyNzowNSBQRFQgMjAxNH4wLjM1OTc0OTYyfg";
+  var token     = "T1==cGFydG5lcl9pZD00NDcwNDIzMiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1kM2MyMDlhMTNiYjQ0NGRhYjJkZDljNGMyYzY5NDNjNGE0MjM3ODViOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDQwTkRjd05ESXpNbjUtVTJGMElFMWhjaUF5TWlBeE9Eb3lOem93TlNCUVJGUWdNakF4Tkg0d0xqTTFPVGMwT1RZeWZnJmNyZWF0ZV90aW1lPTEzOTU1MzgwNzYmbm9uY2U9MC4xNDAzNzcyODYwMDE5MDY0NiZleHBpcmVfdGltZT0xMzk1NjI0NDIxJmNvbm5lY3Rpb25fZGF0YT0=";
+ 
+  //Random controllable shiznits
+  var widthpub     = 300;
+  var heightpub    = 200;
+  var widthsub     = 400;
+  var heightsub    = 300;
+  var publishername =  "Abhishek";
+
+////setTimeout(function,time);
+    
+ 
+  function sessionConnectedHandler (event) {
+     session.publish( publisher );
+     subscribeToStreams(event.streams);
+  }
+  function subscribeToStreams(streams) {
+    for (var i = 0; i < streams.length; i++) {
+        var stream = streams[i];
+        if (stream.connection.connectionId 
+               != session.connection.connectionId) {
+            var subscriber = session.subscribe(stream,document.getElementById("sub"), {width:widthsub, height:heightsub});
+        }
+    }
+  }
+  function streamCreatedHandler(event) {
+    subscribeToStreams(event.streams);
+  }
+ 
+  var publisher = TB.initPublisher(apiKey,document.getElementById("sub"),{width:widthpub, height:heightpub, name: publishername});
+  var session   = TB.initSession(sessionId);
+ 
+  session.connect(apiKey, token);
+  session.addEventListener("sessionConnected", 
+                           sessionConnectedHandler);
+ 
+  session.addEventListener("streamCreated", 
+                           streamCreatedHandler);
+						   
+						   
+						   var connectionCount = 0;
+TB.setLogLevel(TB.DEBUG);
+TB.addEventListener("exception", exceptionHandler);
+ 
+function connect() {
+    if (TB.checkSystemRequirements() == 1) {
+        var session = TB.initSession(sessionID);
+        session.addEventListener("connectionCreated",
+                                 connectionCreatedHandler);
+        session.addEventListener("connectionDestroyed",
+                                 connectionDestroyedHandler);
+        session.connect(apiKey, token);
+ 
+    } else {
+        TB.log("The client does not support WebRTC.");
+    }
+ 
+    session.addEventListener("sessionConnected",
+                              sessionConnectHandler);
+    session.connect(apiKey, token);
+}
+ 
+function disconnect() {
+    session.addEventListener("sessionDisconnected",
+                             sessionDisconnectHandler);
+    session.connect(apiKey, token);
+}
+ 
+function sessionDisconnectHandler(event) {
+    // The event is defined by the SessionDisconnectEvent class
+    if (event.reason == "networkDisconnected") {
+        alert("Your network connection terminated.")
+    }
+}
+ 
+ 
+ 
+function sessionConnectHandler(event) {
+    connectionCount = event.connections.length;
+    TB.log(connectionCount);
+}
+ 
+function connectionCreatedHandler(event) {
+    connectionCount += event.connections.length;
+    TB.log(connectionCount);
+}
+ 
+function connectionDestroyedHandler(event) {
+    connectionCount -= event.connections.length;
+    TB.log(connectionCount);
+}
+ 
+function exceptionHandler(event) {
+    if (event.code == 1006) {
+        // Connection failed
+    }
+}
+
+
+</script>
+
   </head>
 
   <body>
@@ -54,15 +160,17 @@
     </div>
 
 	
-
+	<div id="sub" style="height:300px;width:200px;"></div>
+	<div id="pub" style="height:400px;width:300px;"></div>
 
 	<div class="container desc">
 		<div class="row">
 			<br><br>
-			<div class="col-lg-6 centered">
+			<!--<div class="col-lg-6 centered">
 				<img src="assets/img/p03.png" alt="">
 			</div><!-- col-lg-6 -->
-			<div class="col-lg-6">
+			
+			<!--<div class="col-lg-6">
 				<h4>CLIENT NAME</h4>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
@@ -72,14 +180,9 @@
 					<i class="fa fa-circle-o"></i> Development<br/>
 					<i class="fa fa-link"></i> <a href="#">BlackTie.co</a>
 				</p>
-			</div>
+			</div>-->
 		</div><!-- row -->
 		
-		<br><br>
-	
-
-		<br><br>
-		<hr>
 		
 
 

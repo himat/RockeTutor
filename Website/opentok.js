@@ -21,7 +21,7 @@ var apiKey    = "44704232";
         var stream = streams[i];
         if (stream.connection.connectionId 
                != session.connection.connectionId) {
-            var subscriber = session.subscribe(stream,"mySubcriber", {width:widthsub, height:heightsub});
+            var subscriber = session.subscribe(stream,document.getElementById("bob"), {width:widthsub, height:heightsub});
         }
     }
   }
