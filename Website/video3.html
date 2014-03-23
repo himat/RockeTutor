@@ -21,6 +21,14 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
+	
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+    <link rel="stylesheet" href="codemirror-4.0/lib/codemirror.css" />
+    <script src="codemirror-4.0/lib/codemirror.js"></script>
+
+    <link rel="stylesheet" href="Firepad/firepad.css" />
+    <script src="Firepad/firepad.js"></script>
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -158,6 +166,14 @@ function exceptionHandler(event) {
         </div><!--/.nav-collapse -->
       </div>
     </div>
+	
+	<div id="firepad"></div>
+    <script>
+      var firepadRef = new Firebase('https://burning-fire-3748.firebaseio.com/');
+      var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
+      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
+          { richTextShortcuts: true, richTextToolbar: true });
+    </script>
 
 	
 	<div id="sub" style="height:3px;width:2px;"></div>

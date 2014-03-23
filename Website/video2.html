@@ -10,8 +10,18 @@
 
     <title>RockeTutor - The Only Tutoring You Need</title>
 	
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+    <link rel="stylesheet" href="codemirror-4.0/lib/codemirror.css" />
+    <script src="codemirror-4.0/lib/codemirror.js"></script>
+
+    <link rel="stylesheet" href="Firepad/firepad.css" />
+    <script src="Firepad/firepad.js"></script>
+	
 	<script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js"></script>
 	<script src="opentok.js">
+	
+	
 	
 	</script>
 
@@ -159,6 +169,14 @@ function exceptionHandler(event) {
       </div>
     </div>
 
+	<div id="firepad"></div>
+    <script>
+      var firepadRef = new Firebase('https://burning-fire-3748.firebaseio.com/');
+      var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
+      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
+          { richTextShortcuts: true, richTextToolbar: true });
+    </script>
+	
 	<iframe src="http://www.slideshare.net/slideshow/embed_code/32626653" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 	
 	<div id="sub" style="height:3px;width:2px;"></div>
