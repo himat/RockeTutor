@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="users_list" >
+        <item >davidmelvinjr@gmail.com</item>
+        <item >vivekjain03@gmail.com</item>
+        <item >anishjain123@live.com</item>
+        <item >achu.totathil@gmail.com</item>
+        <item >abhisheklingeneni@gmail.com</item>
+        <item >himat@yahoo.com</item>
+        <item >sandybisaria@gmail.com</item>
+    </string-array>
+    
+</resources>

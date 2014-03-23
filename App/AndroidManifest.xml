@@ -34,6 +34,10 @@
             android:name="me.tutor.app.VideoChatActivity"
             android:label="@string/title_activity_video_chat" >
         </activity>
+        <activity
+            android:name="me.tutor.app.UsersListActivity"
+            android:label="@string/title_activity_users_list" >
+        </activity>
     </application>
 
 </manifest>
