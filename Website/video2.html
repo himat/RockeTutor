@@ -168,19 +168,24 @@ function exceptionHandler(event) {
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
-	<div id="firepad"></div>
-    <script>
-      var firepadRef = new Firebase('https://burning-fire-3748.firebaseio.com/');
-      var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
-      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
-          { richTextShortcuts: true, richTextToolbar: true });
-    </script>
-	
-	<iframe src="http://www.slideshare.net/slideshow/embed_code/32626653" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-	
-	<div id="sub" style="height:3px;width:2px;"></div>
-	<div id="pub" style="height:4px;width:3px;"></div>
+	<div class="row">
+	<div class="col-md-5">
+		<div id="firepad"></div>
+			<script>
+			  var firepadRef = new Firebase('https://burning-fire-3748.firebaseio.com/');
+			  var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
+			  var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
+				  { richTextShortcuts: true, richTextToolbar: true });
+			</script>
+		</div>
+		<div class="col-md-4">
+			<iframe src="http://www.slideshare.net/slideshow/embed_code/32626653" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+		</div>
+		<div class="col-md-3">
+			<div id="sub" style="height:3px;width:2px;"></div>
+			<div id="pub" style="height:4px;width:3px;"></div>
+		</div>
+	</div>
 
 	<div class="container desc">
 		<div class="row">
