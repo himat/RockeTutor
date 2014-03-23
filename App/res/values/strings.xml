@@ -4,5 +4,7 @@
     <string name="app_name">TutorMe</string>
     <string name="action_settings">Settings</string>
     <string name="welcome">Welcome to RockeTutor!</string>
+    <string name="title_activity_video_chat">VideoChatActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
