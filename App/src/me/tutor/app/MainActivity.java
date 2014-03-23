@@ -1,6 +1,5 @@
 package me.tutor.app;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -25,8 +24,8 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent videoChatIntent = new Intent(getApplicationContext(), OpenTokVideoRenderer.class);
-				startActivity(videoChatIntent);
+				Intent intent = new Intent(MainActivity.this, VideoChatActivity.class);
+				startActivity(intent);
 			}
 			
 		});
