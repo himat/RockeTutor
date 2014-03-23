@@ -8,5 +8,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="API_KEY">44704232</string>
     <string name="title_activity_users_list">UsersListActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
 
 </resources>

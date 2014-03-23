@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_main);
 		
 		Button loginButton = (Button) findViewById(R.id.loginButton);
@@ -51,6 +52,8 @@ public class MainActivity extends Activity {
 			}
 			
 		});	
+		
+		
 		
 	}
 

@@ -24,19 +24,23 @@
         <activity
             android:name="me.tutor.app.MainActivity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="me.tutor.app.VideoChatActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="me.tutor.app.UsersListActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="me.tutor.app.SplashActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="me.tutor.app.VideoChatActivity"
-            android:label="@string/title_activity_video_chat" >
-        </activity>
-        <activity
-            android:name="me.tutor.app.UsersListActivity"
-            android:label="@string/title_activity_users_list" >
         </activity>
     </application>
 
