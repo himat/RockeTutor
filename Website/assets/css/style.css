@@ -1,0 +1,40 @@
+
+.no-margin
+{
+	margin-right: -160px;
+	padding-right: 13px;
+}
+
+.tutor-panel{
+	padding-top: 10px;
+	min-height: 500px;
+	background-color:white;
+	
+}
+.tutor-list{
+	color: green;
+	text-align: left;
+}
+.tutor-name{
+	color: #555;
+}
+.navbar-header{
+	background: url(../img/finalbanner.png) no-repeat center top;
+
+
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 50px;
+	width: 50%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
